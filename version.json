@@ -1,0 +1,39 @@
+{
+  "changelog": [
+    {
+      "version": "0.1.3",
+      "release_date": "2024-12-19",
+      "release_notes": "Current stable version with weight painting tools",
+      "minimum_blender": "4.2.0",
+      "new_features": [
+        "Advanced bone merging with collection support",
+        "Mirror weight transfer functionality", 
+        "Comprehensive weight management tools"
+      ],
+      "changes": [
+        "Improved UI organization",
+        "Better error handling"
+      ],
+      "fixes": [
+        "Various stability improvements"
+      ]
+    }
+  ],
+  "stores": {
+    "blender_market": {
+      "name": "Blender Market",
+      "url": "https://blendermarket.com/creators/shugan",
+      "icon": "URL"
+    },
+    "gumroad": {
+      "name": "Gumroad", 
+      "url": "https://gumroad.com/shugan",
+      "icon": "URL"
+    },
+    "booth": {
+      "name": "Booth",
+      "url": "https://shugan.booth.pm/",
+      "icon": "URL"
+    }
+  }
+}
