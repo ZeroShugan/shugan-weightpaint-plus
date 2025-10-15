@@ -1,39 +1,82 @@
 {
   "changelog": [
     {
-      "version": "0.1.4",
-      "release_date": "2024-12-19",
-      "release_notes": "Current stable version with weight painting tools",
+      "version": "0.2.0",
+      "release_date": "2025-01-15",
+      "release_notes": "Major update focused on weight island detection, asymmetry repair, bone merging, and improved weight transfer reliability",
       "minimum_blender": "4.2.0",
       "new_features": [
-        "Advanced bone merging with collection support",
-        "Mirror weight transfer functionality", 
-        "Comprehensive weight management tools"
+        "NEW PANEL: Weight Islands - Complete rogue weight detection system with 'Calculate Weight Islands' to find disconnected weight regions, 'Focus Smallest Island' to locate problem areas, 'Select Next Island' to cycle through issues, 'Delete Selected Island' and 'Delete Small Islands' for cleanup, 'Repair All' to automatically fix all detected problems, 'Use Symmetry' toggle for mirrored operations, 'Group by Geometry' to organize by mesh parts",
+        "NEW PANEL: Bone Merger - Advanced bone merging with 'Merge Selected Bones' supporting 6 position methods (Hierarchy, Average, Weighted, etc.), multiple weight combine methods, collection assignment, and optional backup creation",
+        "MAJOR UPDATE: Weight Asymmetrical panel - Added 'Repair All Left Side Groups' and 'Repair All Right Side Groups' for batch fixing, 'Focus Vertex' button to zoom on asymmetric vertices, automatic detection and warning when vertices cannot be repaired due to missing mirror geometry, 'Mirror Threshold' and 'Centerline Threshold' sliders for fine-tuning symmetry detection",
+        "'Weight Copy from Bone' - Copy and combine weights from all selected bone vertex groups to the active bone with 9 combine methods: Average (normalized weight), Maximum (highest weight), Minimum (lowest weight), Additive (sum clamped to 1.0), Additive Unclamped (sum without limit), Multiply (fade effect), First Only, Last Only, and Weighted Average (by bone influence)"
       ],
       "changes": [
-        "Improved UI organization",
-        "Better error handling"
+        "GREATLY IMPROVED: 'Weight Transfer Bones L<>R' now works reliably on all mesh types including multi-part meshes and handles all naming conventions (.L/.R, _L/_R, -L/-R, LEFT/RIGHT, left/right)",
+        "GREATLY IMPROVED: 'Weight Copy L<>R' now correctly preserves centerline vertices and works on complex meshes",
+        "Weight Islands list now shows vertex counts, geometry breakdown with letter labels (A, B, C), and per-geometry repair options",
+        "'CHECK ALL' in Weight Asymmetrical now distinguishes between mesh geometry asymmetry (unrepairable) and weight asymmetry (repairable) with visual warnings"
       ],
       "fixes": [
-        "Various stability improvements"
+        "Fixed 'Weight Transfer Bones L<>R' failing on meshes with disconnected parts",
+        "Fixed 'Weight Copy L<>R' incorrectly affecting centerline vertices",
+        "Fixed 'Remove Zero Weight Vertex Groups' deleting wrong groups when vertex groups had .001, .002 suffixes",
+        "Fixed 'CHECK ALL' losing vertex selection after completion",
+        "Fixed repair buttons not working when vertices lack mirror counterparts - now shows clear warning"
       ]
+    },
+    {
+      "version": "0.1.3",
+      "release_date": "2025-06-21",
+      "release_notes": "Bug fixes and description updates",
+      "minimum_blender": "4.2.0",
+      "new_features": [],
+      "changes": [
+        "Updated button tooltips and descriptions"
+      ],
+      "fixes": [
+        "Fixed errors in Weight Tools panel",
+        "Fixed crash when enabling/disabling addon"
+      ]
+    },
+    {
+      "version": "0.1.0",
+      "release_date": "2024-08-21",
+      "release_notes": "Initial release of Weight Paint ++",
+      "minimum_blender": "4.2.0",
+      "new_features": [
+        "'Weight Transfer Bones L<>R' for mirroring bone weights",
+        "'Check Vertex Groups Bones Exceeding Limit' to find problem areas",
+        "'Limit Vertex Groups to 4' for game engine optimization",
+        "'Remove Zero Weight Vertex from Bones' cleanup tool",
+        "'Remove Zero Weight Vertex Groups' to delete empty groups",
+        "'Weight Copy L<>R' for directional mirroring",
+        "Weight Asymmetrical panel with 'CHECK ALL' detection"
+      ],
+      "changes": [],
+      "fixes": []
     }
   ],
   "stores": {
+    "superhive": {
+      "name": "SuperHive Market",
+      "url": "https://superhivemarket.com/products/weight-paint-",
+      "icon": "COLLECTION_COLOR_03"
+    },
     "blender_market": {
       "name": "Blender Market",
       "url": "https://blendermarket.com/creators/shugan",
-      "icon": "URL"
+      "icon": "COLLECTION_COLOR_02"
     },
     "gumroad": {
-      "name": "Gumroad", 
-      "url": "https://gumroad.com/shugan",
-      "icon": "URL"
+      "name": "Gumroad",
+      "url": "https://shugan.gumroad.com/l/weightpaint",
+      "icon": "COLLECTION_COLOR_07"
     },
     "booth": {
       "name": "Booth",
-      "url": "https://shugan.booth.pm/",
-      "icon": "URL"
+      "url": "https://shugan.booth.pm/items/6029835",
+      "icon": "COLLECTION_COLOR_01"
     }
   }
 }
