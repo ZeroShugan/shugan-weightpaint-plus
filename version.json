@@ -1,19 +1,31 @@
 {
   "changelog": [
     {
+      "version": "0.2.1",
+      "release_date": "2025-10-19",
+      "release_notes": "Critical bug fix for Blender 4.5+ compatibility",
+      "minimum_blender": "4.2.0",
+      "new_features": [],
+      "changes": [],
+      "fixes": [
+        "Fixed 'TypeError: bpy_prop_collection.__contains__: expected a string' error when entering weight paint mode in Blender 4.5+",
+        "Fixed bone collection detection failing across different Blender versions"
+      ]
+    },
+    {
       "version": "0.2.0",
-      "release_date": "2025-01-15",
+      "release_date": "2025-10-18",
       "release_notes": "Major update focused on weight island detection, asymmetry repair, bone merging, and improved weight transfer reliability",
       "minimum_blender": "4.2.0",
       "new_features": [
         "NEW PANEL: Weight Islands - Complete rogue weight detection system with 'Calculate Weight Islands' to find disconnected weight regions, 'Focus Smallest Island' to locate problem areas, 'Select Next Island' to cycle through issues, 'Delete Selected Island' and 'Delete Small Islands' for cleanup, 'Repair All' to automatically fix all detected problems, 'Use Symmetry' toggle for mirrored operations, 'Group by Geometry' to organize by mesh parts",
         "NEW PANEL: Bone Merger - Advanced bone merging with 'Merge Selected Bones' supporting 6 position methods (Hierarchy, Average, Weighted, etc.), multiple weight combine methods, collection assignment, and optional backup creation",
-        "MAJOR UPDATE: Weight Asymmetrical panel - Added 'Repair All Left Side Groups' and 'Repair All Right Side Groups' for batch fixing, 'Focus Vertex' button to zoom on asymmetric vertices, automatic detection and warning when vertices cannot be repaired due to missing mirror geometry, 'Mirror Threshold' and 'Centerline Threshold' sliders for fine-tuning symmetry detection",
+        "UPDATE: Weight Asymmetrical panel - Added 'Repair All Left Side Groups' and 'Repair All Right Side Groups' for batch fixing, 'Focus Vertex' button to zoom on asymmetric vertices, automatic detection and warning when vertices cannot be repaired due to missing mirror geometry, 'Mirror Threshold' and 'Centerline Threshold' sliders for fine-tuning symmetry detection",
         "'Weight Copy from Bone' - Copy and combine weights from all selected bone vertex groups to the active bone with 9 combine methods: Average (normalized weight), Maximum (highest weight), Minimum (lowest weight), Additive (sum clamped to 1.0), Additive Unclamped (sum without limit), Multiply (fade effect), First Only, Last Only, and Weighted Average (by bone influence)"
       ],
       "changes": [
-        "GREATLY IMPROVED: 'Weight Transfer Bones L<>R' now works reliably on all mesh types including multi-part meshes and handles all naming conventions (.L/.R, _L/_R, -L/-R, LEFT/RIGHT, left/right)",
-        "GREATLY IMPROVED: 'Weight Copy L<>R' now correctly preserves centerline vertices and works on complex meshes",
+        "IMPROVED: 'Weight Transfer Bones L<>R' now works reliably on all mesh types including multi-part meshes and handles all naming conventions (.L/.R, _L/_R, -L/-R, LEFT/RIGHT, left/right)",
+        "IMPROVED: 'Weight Copy L<>R' now correctly preserves centerline vertices and works on complex meshes",
         "Weight Islands list now shows vertex counts, geometry breakdown with letter labels (A, B, C), and per-geometry repair options",
         "'CHECK ALL' in Weight Asymmetrical now distinguishes between mesh geometry asymmetry (unrepairable) and weight asymmetry (repairable) with visual warnings"
       ],
