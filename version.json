@@ -1,6 +1,23 @@
 {
   "changelog": [
     {
+      "version": "0.2.2",
+      "release_date": "2026-04-07",
+      "release_notes": "Blender 5.1 compatibility, bug fixes",
+      "minimum_blender": "4.2.0",
+      "new_features": [],
+      "changes": [
+        "Improved: 'Limit Vertex Groups' now uses a direct Python implementation instead of the Blender built-in operator, making it more reliable"
+      ],
+      "fixes": [
+        "Fixed 'Armature object has no attribute vertices' crash when running Check All from weight paint mode with armature and mesh selected",
+        "Fixed mode restoration crash ('WEIGHT_PAINT' not valid for Armature) after Check All completes in weight paint mode",
+        "Fixed version mismatch between bl_info and blender_manifest.toml (was showing 0.2.0 instead of 0.2.1)",
+        "Fixed 'Limit Vertex Groups' not actually removing excess weights",
+        "Fixed addon startup error in Blender 5.1 caused by underscore-prefixed property names"
+      ]
+    },
+    {
       "version": "0.2.1",
       "release_date": "2025-10-19",
       "release_notes": "Critical bug fix for Blender 4.5+ compatibility",
